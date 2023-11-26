@@ -1,0 +1,7 @@
+:root {
+  --primary: #7B5C62;
+  --secondary: #DEBEB3;
+  --alt: #8F9D9F;
+  --highlight: #F8EBE6;
+  --dark: #51504E;
+}
