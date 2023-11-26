@@ -1,0 +1,23 @@
+:root {
+  --primary: #7B5C62;
+  --secondary: #DEBEB3;
+  --alt: #8F9D9F;
+  --highlight: #F8EBE6;
+  --dark: #51504E;
+}
+body {
+  background-image: linear-gradient(to top left, var(--primary), var(--secondary));
+}
+.hero-body, .hero-body > * {
+  background-color: var(--highlight);
+  color: var(--dark) !important;
+}
+
+.hero-body.details, .hero-body.details > * {
+  background-color: var(--secondary);
+}
+
+.hero-body.form, .hero-body.form > * {
+  background-color: white;
+}
+

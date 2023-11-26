@@ -1,14 +1,52 @@
-<h1>Sarah Guillen & Devin Checa Wedding</h1>
-<h2>September 2nd 2024 at 5:30 PM</h2>
-<form name="rsvp" netlify>
-  <p>
-    <label>Name <input type="text" name="name" /></label>
-  </p>
-  <p>
-    <label>Email <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
+<html>
+
+  <head>
+    <link href="bulma.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <main class="container">
+      <section class="hero is-primary">
+        <div class="hero-body title">
+          <p class="title">Sarah & Devin</p>
+          <p class="subtitle">together with their families joyfully invite you to their wedding</p>
+        </div>
+      </section>
+      <section class="hero is-info">
+        <div class="hero-body details">
+          <p class="title">September 2, 2024 at 5:30 PM</p>
+          <p class="subtitle">Location: Rio Lindo, Oxnard CA</p>
+          <p class="content is-small">Exact address and other pertinent details will be sent via email when RSVP is updated</p>
+        </div>
+      </section>
+      <section class="hero is-info">
+        <div class="hero-body form">
+          <form name="rsvp" netlify>
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input required class="input" type="text" placeholder="Name">
+              </div>
+              <p class="help">Guest name</p>
+            </div>
+            <p>
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input required class="input" type="text" placeholder="Email">
+              </div>
+              <p class="help">Guest email</p>
+            </div>
+            <p>
+              <button class="button" type="submit">Send</button>
+            </p>
+          </form>
+        </div>
+      </section>
+
+    </main>
+  </body>
+
+</html>
 
