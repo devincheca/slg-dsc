@@ -21,3 +21,16 @@ body {
   background-color: white;
 }
 
+.hero-inner-box-1 {
+  padding: 3rem 3rem;
+  background-color: initial;
+  background-image: url("images/1b7d025393b198d87d0a1058a16fb1f3.jpg");
+  background-position: right;
+}
+.hero-inner-box-2 {
+  padding: 3rem 3rem;
+  background-color: initial;
+  background-image: url("images/1b7d025393b198d87d0a1058a16fb1f3.jpg");
+  background-position: center;
+}
+
