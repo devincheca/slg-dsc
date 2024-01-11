@@ -1,9 +1,10 @@
 :root {
-  --primary: #7B5C62;
-  --secondary: #DEBEB3;
+  --primary: white
+  --secondary: white;
   --alt: #8F9D9F;
   --highlight: #F8EBE6;
   --dark: #51504E;
+  --width: 60%;
 }
 body {
   background-image: linear-gradient(to top left, var(--primary), var(--secondary));
@@ -32,5 +33,44 @@ body {
   background-color: initial;
   background-image: url("images/1b7d025393b198d87d0a1058a16fb1f3.jpg");
   background-position: center;
+}
+
+.hero.is-primary {
+  background-color: white;
+}
+
+@media screen and (min-width: 1250px) {
+  .hero.is-info {
+    margin: auto;
+    max-width: var(--width);
+  }
+  
+  .jumbo-img {
+    margin: auto;
+    max-width: var(--width);
+  }
+}
+
+#scrollCarrot {
+  text-align: center;
+  font-size: 2em;
+  animation: bounceCarrot 3s infinite;
+  position: fixed;
+  bottom: 0;
+  left: 45vw;
+}
+
+@keyframes bounceCarrot {
+  0%   {margin-bottom:0px;}
+  10%  {margin-bottom:3px;}
+  20%  {margin-bottom:6px;}
+  30%  {margin-bottom:9px;}
+  40%  {margin-bottom:12px;}
+  50%  {margin-bottom:15px;}
+  60%  {margin-bottom:12px;}
+  70%  {margin-bottom:9px;}
+  80%  {margin-bottom:6px;}
+  90%  {margin-bottom:3px;}
+  100% {margin-bottom:0px;}
 }
 

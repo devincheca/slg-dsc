@@ -13,13 +13,14 @@
           return new Date('8/1/2024') < new Date();
         }
       };
+      document.onscroll = () => setTimeout(() => document.getElementById('scrollCarrot').style.display = 'none', 3000);
     </script>
   </head>
 
   <body>
     <main class="container">
       <section class="hero is-primary">
-        <img src="./images/invitation.jpg" />
+        <img class="jumbo-img"src="./images/invitation.jpg" />
       </section>
       <section class="hero is-info" id="rsvpForm">
         <div class="hero-body form">
@@ -58,6 +59,7 @@
           </form>
         </div>
       </section>
+      <div id="scrollCarrot">\/ RSVP \/</div>
 
     </main>
   </body>
