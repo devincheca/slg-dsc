@@ -74,3 +74,7 @@ body {
   100% {margin-bottom:0px;}
 }
 
+#allergyTextarea {
+  max-height: 20em;
+  min-height: 4em;
+}

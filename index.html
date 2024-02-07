@@ -7,15 +7,7 @@
     <link href="bulma.css" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="./images/flowerPng.png">
-    <script>
-      window.onload = () => {
-        if (canRsvp()) document.getElementById('rsvpForm').style.display = 'none';
-        function canRsvp() {
-          return new Date('8/1/2024') < new Date();
-        }
-      };
-      document.onscroll = () => setTimeout(() => document.getElementById('scrollCarrot').style.display = 'none', 3000);
-    </script>
+    <script src="index.js" defer></script>
   </head>
 
   <body>
@@ -25,8 +17,8 @@
       </section>
       <section class="hero is-info" id="rsvpForm">
         <div class="hero-body form">
-          <h1>RSVP</h1>
-          <form name="rsvp" netlify>
+          <h1>RSVP (Labor Day 2024, 5:30 PM - 10:30 PM)</h1>
+          <form id="rsvp" name="rsvp" netlify onchange="onFormChange()">
             <div class="field">
               <label class="label">Name</label>
               <div class="control">
@@ -45,13 +37,18 @@
             <div class="field">
               <div class="control">
                 <label class="radio">
-                  <input type="radio" name="answer">
+                  <input type="radio" name="answer" value="attending">
                   I will be attending
                 </label>
                 <label class="radio">
-                  <input type="radio" name="answer">
+                  <input type="radio" name="answer" value="notAttending">
                   I will not be attending
                 </label>
+              </div>
+            </div>
+            <div id="attendingField" class="field" style="display: none;">
+              <div class="control">
+                <textarea id="allergyTextarea" class="textarea" placeholder="e.g. Allergic to peanuts, vegan"></textarea>
               </div>
             </div>
             <p>
