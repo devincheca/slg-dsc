@@ -11,6 +11,19 @@ const onFormChange = () => {
   formData.get('answer') === CONSTANTS.ATTENDING
     ? showAttendingField()
     : hideAttendingField();
+
+  updateAttendees();
+};
+
+const updateAttendees = () => {
+  const list = document.getElementById('attendeesList');
+  document.getElementById('attendees').value = Array.from(list.children)
+    .map(div => Array.from(div.children)
+      .filter(element => element.type = 'text')
+      .map(inputDiv => Array.from(inputDiv.children).map(input => input.value))
+    )
+    .flat()
+    .toString();
 };
 
 window.onload = () => {
