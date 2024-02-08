@@ -47,7 +47,7 @@ const getMinusButton = index => {
   const button = document.createElement('button');
   button.className = 'button is-danger';
   button.type = 'button';
-  button.innerHTML = '-';
+  button.innerHTML = 'Remove';
   button.onclick = () => removeAttendie(index);
   div.appendChild(button);
   return div;
