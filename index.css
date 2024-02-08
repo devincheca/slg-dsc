@@ -78,3 +78,18 @@ body {
   max-height: 20em;
   min-height: 4em;
 }
+
+#attendingField div {
+  margin-bottom: .5em;
+}
+
+#attendeesList div {
+  margin-bottom: .5em;
+}
+
+.new-attendie {
+  display: flex;
+  justify-content: space-evenly;
+  margin: .25em;
+}
+
