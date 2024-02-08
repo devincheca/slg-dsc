@@ -37,6 +37,7 @@ document.onscroll = () => setTimeout(() => document.getElementById('scrollCarrot
 const addAttendie = () => {
   const list = document.getElementById('attendeesList');
   const index = list.children.length;
+  const id = `attendie_${index}`;
 
   const newAttendie = document.createElement('div');
   newAttendie.className = 'new-attendie';
@@ -47,12 +48,15 @@ const addAttendie = () => {
   input.required = true;
   input.className = 'input';
   input.type = 'text';
-  input.name = `attendie_${index}`;
+  input.name = id;
+  input.id = id;
   input.placeholder = 'Attendie Name';
   inputDiv.appendChild(input);
   newAttendie.appendChild(inputDiv);
 
   list.prepend(newAttendie);
+
+  setTimeout(() => document.getElementById(id).focus(), 1);
 };
 
 const getMinusButton = index => {
