@@ -12,6 +12,7 @@
 
   <body>
     <main class="container">
+      <div class="nav-bar-div" onclick="toggleNav()">☰</div>
       <section class="hero is-primary">
         <img class="jumbo-img"src="./images/invitation.jpg" />
       </section>
@@ -67,7 +68,22 @@
       </section>
       <div id="scrollCarrot">\/ RSVP \/</div>
     </main>
+    <div id="nav" style="display: none;">
+      <div onclick="toggleNav()">X</div>
+      <ul>
+        <li onclick="toggleNav()">Home</li>
+        <li>
+          <a href="https://www.amazon.com/wedding/registry/19M0GR3LM4BFL" target="_blank">
+            Registry
+          </a>
+        </li>
+        <li onclick="notifyDetails()">
+          <span>Additional Details</span>
+          <span>(theme, dress code, etc.)</span>
+        </li>
+        <li id="notifyDetails"></li>
+      </ul>
+    </div>
   </body>
-
 </html>
 

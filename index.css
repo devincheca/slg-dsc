@@ -97,3 +97,33 @@ body {
   margin: .25em;
 }
 
+.nav-bar-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 2em;
+}
+
+#nav {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 350vh;
+  width: 100vw;
+  background-color: mistyrose;
+  padding: 2em;
+}
+
+#nav div {
+  text-align: right;
+  font-size: 1.5em;
+}
+#nav ul {
+  text-align: center;
+}
+#nav ul li {
+  margin: 2em;
+  font-size: 1.5em;
+}
+
