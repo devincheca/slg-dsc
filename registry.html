@@ -1,0 +1,51 @@
+<html>
+
+  <head>
+    <title>Sarah & Devin</title>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <link href="bulma.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./images/flowerPng.png">
+    <script src="nav.js" defer></script>
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="nav-bar-div" onclick="toggleNav()">☰</div>
+      <section class="hero" style="display: flex; flex-direction: column; justify-content: space-around; height: 100vh;">
+        <h1 class="registry-title" style="text-align: center; font-size: 2em;">
+          Registry
+        </h1>
+        <a style="text-align: center;" href="https://www.amazon.com/wedding/registry/19M0GR3LM4BFL" target="_blank">
+          Amazon Registry
+        </a>
+        <hr></hr>
+        <div style="text-align: center;">or</div>
+        <hr></hr>
+        <img src="./images/DSC_Venmo.jpg" style="width: 50vh; margin: auto;"></img>
+      </section>
+    </main>
+    <div id="nav" style="display: none;">
+      <div onclick="toggleNav()">X</div>
+      <ul>
+        <li>
+          <a href="https://sarahguillen.devincheca.com">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="https://www.amazon.com/wedding/registry/19M0GR3LM4BFL" target="_blank">
+            Registry
+          </a>
+        </li>
+        <li onclick="notifyDetails()">
+          <span>Additional Details</span>
+          <span>(theme, dress code, etc.)</span>
+        </li>
+        <li id="notifyDetails"></li>
+      </ul>
+    </div>
+  </body>
+</html>
+

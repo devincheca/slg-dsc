@@ -114,6 +114,11 @@ body {
   background-color: mistyrose;
   padding: 2em;
 }
+.registry-title {
+  background-color: mistyrose;
+  margin: auto;
+  width: 45%;
+}
 
 #nav div {
   text-align: right;
