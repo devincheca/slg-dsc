@@ -38,6 +38,7 @@ const addAttendie = () => {
   const list = document.getElementById('attendeesList');
   const index = list.children.length;
   const id = `attendie_${index}`;
+  if (index > 0) return showLimitOnePlusOne();
 
   const newAttendie = document.createElement('div');
   newAttendie.className = 'new-attendie';
@@ -57,6 +58,11 @@ const addAttendie = () => {
   list.prepend(newAttendie);
 
   setTimeout(() => document.getElementById(id).focus(), 1);
+};
+const showLimitOnePlusOne = () => {
+  const onePlusOneDiv = document.getElementById('limitPlusOneDiv');
+  onePlusOneDiv.style.display = 'block';
+  setTimeout(() => onePlusOneDiv.style.display = 'none', 5000);
 };
 
 const getMinusButton = index => {
