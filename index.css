@@ -121,6 +121,7 @@ body {
 }
 .details-title {
   background-color: mistyrose;
+  margin: auto;
   width: 65%;
 }
 
