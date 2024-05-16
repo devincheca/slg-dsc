@@ -119,6 +119,10 @@ body {
   margin: auto;
   width: 45%;
 }
+.details-title {
+  background-color: mistyrose;
+  width: 65%;
+}
 
 #nav div {
   text-align: right;
