@@ -137,3 +137,21 @@ body {
   font-size: 1.5em;
 }
 
+.color-theme-div {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  height: 20vh;
+  width: 20vw;
+  & > * {
+    height: 15vh;
+    margin: auto;
+    padding: 1em;
+  }
+  & > .burgundy { background-color: #c2587e; color: white; }
+  & > .dusty-blue { background-color: #97cbff; }
+  & > .dusty-rose { background-color: #d1adb2; }
+  & > .cream-white { background-color: creamwhite; }
+  & > .navy-blue { background-color: #406ea9; color: white; }
+}
+
