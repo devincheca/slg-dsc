@@ -139,14 +139,12 @@ body {
 
 .color-theme-div {
   margin: auto;
-  display: flex;
-  justify-content: space-between;
-  height: 20vh;
-  width: 20vw;
+  width: 40vw;
   & > * {
-    height: 15vh;
+    height: 7ch;
     margin: auto;
     padding: 1em;
+    text-align: center;
   }
   & > .burgundy { background-color: #c2587e; color: white; }
   & > .dusty-blue { background-color: #97cbff; }
