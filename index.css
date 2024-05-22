@@ -119,6 +119,11 @@ body {
   margin: auto;
   width: 45%;
 }
+.details-title {
+  background-color: mistyrose;
+  margin: auto;
+  width: 65%;
+}
 
 #nav div {
   text-align: right;
@@ -130,5 +135,21 @@ body {
 #nav ul li {
   margin: 2em;
   font-size: 1.5em;
+}
+
+.color-theme-div {
+  margin: auto;
+  width: 40vw;
+  & > * {
+    height: 7ch;
+    margin: auto;
+    padding: 1em;
+    text-align: center;
+  }
+  & > .burgundy { background-color: #c2587e; color: white; }
+  & > .dusty-blue { background-color: #97cbff; }
+  & > .dusty-rose { background-color: #d1adb2; }
+  & > .cream-white { background-color: creamwhite; }
+  & > .navy-blue { background-color: #406ea9; color: white; }
 }
 
