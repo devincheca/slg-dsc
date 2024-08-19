@@ -7,13 +7,13 @@ const LAMBDA_ACTIONS = {
 };
 
 const uploadPhotos = async () => {
-  console.log('upload here', document.getElementById('file-input').value);
+  const fileInput = document.getElementById('file-input');
 
-  if (!document.getElementById('file-input').value) {
+  if (!fileInput.value) {
     return showError('Choose a file to upload');
   }
 
-  const url = await fetch(LAMBDA_URL, {
+  const urlResponse = await fetch(LAMBDA_URL, {
     method: 'POST',
     headers: getHeaders(),
     body: JSON.stringify({
@@ -22,7 +22,42 @@ const uploadPhotos = async () => {
     }),
   });
 
-  console.log('url: ', url);
+  const { signedUrl } = await urlResponse.json();
+
+  const file = fileInput.files[0];
+  const type = fileInput.type;
+
+  const fileReader = new FileReader();
+
+  fileReader.onload = event => event && event.target && uploadFile({
+    image: event.target.result,
+    url: signedUrl,
+    type,
+  });
+
+  const uploadResponse = await fetch(signedUrl, {
+  });
+};
+
+const uploadFile = async (file) => {
+  const { image, url, type } = file;
+  if (image && typeof image === 'string') {
+    const binary = atob(image.split(',')[1]);
+    const array = [];
+    for (var i = 0; i < binary.length; i++) {
+      array.push(binary.charCodeAt(i))
+    }
+    const blobData = new Blob([new Uint8Array(array)], { type })
+    await fetch(url, {
+      method: 'PUT',
+      body: blobData
+    });
+    onSuccess();
+  }
+}
+
+const onSuccess = () => {
+  console.log('successful upload');
 };
 
 const showError = error => {
