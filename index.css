@@ -158,3 +158,10 @@ body {
   & > .navy-blue { background-color: #406ea9; color: white; }
 }
 
+#gallery-div {
+}
+
+#gallery-div > img {
+  width: 100vw;
+}
+

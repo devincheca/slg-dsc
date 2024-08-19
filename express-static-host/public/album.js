@@ -12,7 +12,18 @@ const loadImageIds = async () => {
   const response = await fetch(LAMBDA_URL);
   const responseJson = await response.json();
 
-  console.log('response: ', responseJson);
+  const imageUrls = responseJson.Items
+    .map(({ Id }) => `${STATIC_HOST_URL}/image-${Id}`);
+
+  const gallery = document.getElementById('gallery-div');
+
+  imageUrls.map(src => {
+    const img = document.createElement('img');
+
+    img.src = src;
+
+    gallery.appendChild(img);
+  });
 };
 
 (() => loadImageIds())();
