@@ -13,7 +13,7 @@ const uploadPhotos = async () => {
     return showError('Choose a file to upload');
   }
 
-  const urlResponse = await fetch(LAMBDA_URL, {
+  const url = await fetch(LAMBDA_URL, {
     method: 'POST',
     headers: getHeaders(),
     body: JSON.stringify({
@@ -22,10 +22,7 @@ const uploadPhotos = async () => {
     }),
   });
 
-  const { signedUrl } = await urlResponse.json();
-
-  const uploadResponse = await fetch(signedUrl, {
-  });
+  console.log('url: ', url);
 };
 
 const showError = error => {
