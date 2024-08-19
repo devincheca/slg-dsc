@@ -22,6 +22,11 @@ body {
   background-color: white;
 }
 
+.album {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .hero-inner-box-1 {
   padding: 3rem 3rem;
   background-color: initial;

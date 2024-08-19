@@ -7,24 +7,41 @@
     <link href="bulma.css" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="./images/flowerPng.png">
+    <script src="index.js" defer></script>
+    <!--
+      https://nv2vz41k98.execute-api.us-east-1.amazonaws.com/default/slg-dsc-wed
+    <script src="imageGallery.js" defer></script>
+    -->
     <script src="nav.js" defer></script>
+    <script src="album.js" defer></script>
   </head>
 
   <body>
     <main class="container">
       <div class="nav-bar-div" onclick="toggleNav()">☰</div>
-      <section class="hero" style="display: flex; flex-direction: column; justify-content: space-around; height: 100vh;">
-        <h1 class="registry-title" style="text-align: center; font-size: 2em;">
-          Registry
-        </h1>
-        <a style="text-align: center;" href="https://www.amazon.com/wedding/registry/19M0GR3LM4BFL" target="_blank">
-          Amazon Registry
-        </a>
-        <hr></hr>
-        <div style="text-align: center;">or</div>
-        <hr></hr>
-        <img src="./images/DSC_Venmo.jpg" style="width: 50vh; margin: auto;"></img>
+      <section class="hero is-info">
+        <div class="hero-body" style="text-align: center;">Wedding Album</div>
       </section>
+      <div class="album">
+        <button class="button">⟳</button>
+        <div class="file">
+          <label class="file-label">
+            <input
+              class="file-input"
+              type="file"
+              name="file-input-field"
+              id="file-input"
+            />
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fas fa-upload"></i>
+              </span>
+              <span class="file-label"> Choose a photo </span>
+            </span>
+          </label>
+        </div>
+        <button class="button" onclick="uploadPhotos()">Upload</button>
+      </div>
     </main>
     <div id="nav" style="display: none;">
       <div onclick="toggleNav()">X</div>
