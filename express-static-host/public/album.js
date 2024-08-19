@@ -8,6 +8,15 @@ const LAMBDA_ACTIONS = {
 
 const TableName = 'slg-dsc-wed-images';
 
+const loadImageIds = async () => {
+  const response = await fetch(LAMBDA_URL);
+  const responseJson = await response.json();
+
+  console.log('response: ', responseJson);
+};
+
+(() => loadImageIds())();
+
 const uploadPhotos = async () => {
   const fileInput = document.getElementById('file-input');
 
@@ -51,22 +60,21 @@ const uploadFile = async (file) => {
   if (image && typeof image === 'string') {
     const binary = atob(image.split(',')[1]);
     const array = [];
+
     for (var i = 0; i < binary.length; i++) {
       array.push(binary.charCodeAt(i))
     }
+
     const blobData = new Blob([new Uint8Array(array)], { type })
+
     await fetch(url, {
       method: 'PUT',
       body: blobData
     });
-    onSuccess();
+
+    location.reload();
   }
 }
-
-const onSuccess = () => {
-  // refresh the uploaded image scroller at this point
-  console.log('successful upload');
-};
 
 const showError = error => {
   document.getElementById('errorMessage').innerHTML = error;
