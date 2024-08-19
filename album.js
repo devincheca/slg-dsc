@@ -35,6 +35,8 @@ const uploadPhotos = async () => {
     type,
   });
 
+  fileReader.readAsDataURL(file);
+
   const uploadResponse = await fetch(signedUrl, {
   });
 };
