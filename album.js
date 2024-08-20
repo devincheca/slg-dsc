@@ -19,8 +19,18 @@ const loadImageIds = async () => {
 
   imageUrls.map(src => {
     const img = document.createElement('img');
+    img.id = src;
 
-    img.src = src;
+    const observer = new IntersectionObserver((entries, observer) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          document.getElementById(src).src = src;
+          observer.disconnect();
+        }
+      }
+    }, {});
+
+    observer.observe(img);
 
     gallery.appendChild(img);
   });
