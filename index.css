@@ -164,6 +164,8 @@ body {
 }
 
 #gallery-div > img {
-  width: 100vw;
+  display: block;
+  height: 80vh;
+  margin: auto;
 }
 
