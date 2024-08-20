@@ -25,6 +25,8 @@ body {
 .album {
   display: flex;
   justify-content: space-evenly;
+  position: sticky;
+  top: 0;
 }
 
 .hero-inner-box-1 {
