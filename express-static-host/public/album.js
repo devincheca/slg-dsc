@@ -1,4 +1,4 @@
-const STATIC_HOST_URL = 'http://slg-dsc-wed-serverless-bucket.s3-website-us-east-1.amazonaws.com';
+const STATIC_HOST_URL = 'https://d192o2s5j5c0mk.cloudfront.net';
 
 const LAMBDA_URL = 'https://nv2vz41k98.execute-api.us-east-1.amazonaws.com/default/slg-dsc-wed'
 
