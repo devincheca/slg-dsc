@@ -161,11 +161,14 @@ body {
 }
 
 #gallery-div {
+  background-color: var(--highlight);
 }
 
 #gallery-div > img {
+  background-color: var(--highlight);
   display: block;
-  height: 80vh;
+  height: 60vh;
   margin: auto;
+  object-fit: contain;
 }
 
