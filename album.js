@@ -17,25 +17,29 @@ const loadImageIds = async () => {
 
   const gallery = document.getElementById('gallery-div');
 
-  imageUrls.map((src, i) => {
-    const img = document.createElement('img');
-    img.id = src;
+  imageUrls
+    .map(src => ({ src, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ src }) => src)
+    .map((src, i) => {
+      const img = document.createElement('img');
+      img.id = src;
 
-    if (i === 0) img.src = src;
+      if (i === 0) img.src = src;
 
-    gallery.appendChild(img);
+      gallery.appendChild(img);
 
-    const observer = new IntersectionObserver((entries, observer) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          document.getElementById(src).src = src;
-          observer.disconnect();
+      const observer = new IntersectionObserver((entries, observer) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            document.getElementById(src).src = src;
+            observer.disconnect();
+          }
         }
-      }
-    }, {});
+      }, {});
 
-    observer.observe(img);
-  });
+      observer.observe(img);
+    });
 };
 
 (() => loadImageIds())();
