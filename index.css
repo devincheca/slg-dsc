@@ -22,6 +22,13 @@ body {
   background-color: white;
 }
 
+.album {
+  display: flex;
+  justify-content: space-evenly;
+  position: sticky;
+  top: 0;
+}
+
 .hero-inner-box-1 {
   padding: 3rem 3rem;
   background-color: initial;
@@ -151,5 +158,17 @@ body {
   & > .dusty-rose { background-color: #d1adb2; }
   & > .cream-white { background-color: creamwhite; }
   & > .navy-blue { background-color: #406ea9; color: white; }
+}
+
+#gallery-div {
+  background-color: var(--highlight);
+}
+
+#gallery-div > img {
+  background-color: var(--highlight);
+  display: block;
+  height: 60vh;
+  margin: auto;
+  object-fit: contain;
 }
 

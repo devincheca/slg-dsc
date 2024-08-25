@@ -27,12 +27,14 @@ const updateAttendees = () => {
 };
 
 window.onload = () => {
-  if (canRsvp()) document.getElementById('rsvpForm').style.display = 'none';
+  if (canRsvp() && document.getElementById('rsvpForm')) {
+    document.getElementById('rsvpForm').style.display = 'none';
+  }
 };
 
 const canRsvp = () => new Date('8/1/2024') < new Date();
 
-document.onscroll = () => setTimeout(() => document.getElementById('scrollCarrot').style.display = 'none', 3000);
+// document.onscroll = () => setTimeout(() => document.getElementById('scrollCarrot').style.display = 'none', 3000);
 
 const addAttendie = () => {
   const list = document.getElementById('attendeesList');

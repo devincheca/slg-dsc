@@ -1,0 +1,76 @@
+<html>
+
+  <head>
+    <title>Sarah & Devin</title>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <link href="bulma.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./images/flowerPng.png">
+    <script src="index.js" defer></script>
+    <!--
+      https://nv2vz41k98.execute-api.us-east-1.amazonaws.com/default/slg-dsc-wed
+    <script src="imageGallery.js" defer></script>
+    -->
+    <script src="nav.js" defer></script>
+    <script src="album.js" defer></script>
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="nav-bar-div" onclick="toggleNav()">☰</div>
+      <section class="hero is-info">
+        <div class="hero-body" style="text-align: center;">Wedding Album</div>
+      </section>
+      <div class="album">
+        <button class="button" onclick="location.reload()">⟳</button>
+        <div class="file">
+          <label class="file-label">
+            <input
+              class="file-input"
+              type="file"
+              name="file-input-field"
+              id="file-input"
+            />
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fas fa-upload"></i>
+              </span>
+              <span class="file-label"> Choose a photo </span>
+            </span>
+          </label>
+        </div>
+        <button class="button" onclick="uploadPhotos()">Upload</button>
+      </div>
+      <div id="errorMessage" class="has-text-danger" style="text-align: center;"></div>
+      <div id="gallery-div"></div>
+    </main>
+    <div id="nav" style="display: none;">
+      <div onclick="toggleNav()">X</div>
+      <ul>
+        <li>
+          <a href="https://sarahguillen.devincheca.com">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="registry.html">
+            Registry
+          </a>
+        </li>
+        <li>
+          <a href="details.html">
+            Additional Details
+          </a>
+        </li>
+        <li>
+          <a href="album.html">
+            Album / Photo Upload
+          </a>
+        </li>
+        <li id="notifyDetails"></li>
+      </ul>
+    </div>
+  </body>
+</html>
+
