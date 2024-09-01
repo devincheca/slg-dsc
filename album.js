@@ -44,6 +44,10 @@ const loadImageIds = async () => {
 
 (() => loadImageIds())();
 
+const focusUploadButton = () => {
+  document.getElementById('upload-button').focus();
+};
+
 const showLoader = () => {
   document.getElementById('loader').style.display = 'block';
 };
