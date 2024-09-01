@@ -44,12 +44,18 @@ const loadImageIds = async () => {
 
 (() => loadImageIds())();
 
+const showLoader = () => {
+  document.getElementById('loader').style.display = 'block';
+};
+
 const uploadPhotos = async () => {
   const fileInput = document.getElementById('file-input');
 
   if (!fileInput.value) {
     return showError('Choose a file to upload');
   }
+
+  showLoader();
 
   const Id = crypto.randomUUID();
   const urlResponse = await fetch(LAMBDA_URL, {
