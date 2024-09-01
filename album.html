@@ -31,6 +31,7 @@
               type="file"
               name="file-input-field"
               id="file-input"
+              onchange="focusUploadButton()"
             />
             <span class="file-cta">
               <span class="file-icon">
@@ -40,7 +41,7 @@
             </span>
           </label>
         </div>
-        <button class="button" onclick="uploadPhotos()">Upload</button>
+        <button class="button is-primary" id="upload-button" onclick="uploadPhotos()">Upload</button>
       </div>
       <div id="errorMessage" class="has-text-danger" style="text-align: center;"></div>
       <progress
