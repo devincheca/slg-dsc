@@ -169,6 +169,6 @@ body {
   display: block;
   height: 60vh;
   margin: auto;
-  object-fit: contain;
+  object-fit: cover;
 }
 
