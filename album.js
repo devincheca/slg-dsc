@@ -9,11 +9,26 @@ const LAMBDA_ACTIONS = {
 const TableName = 'slg-dsc-wed-images';
 
 const loadImageIds = async () => {
-  const response = await fetch(LAMBDA_URL);
+  const response = await fetch(`${STATIC_HOST_URL}/manifest.json`);
+  console.log('res : ', response);
   const responseJson = await response.json();
+  console.log('res json: ', responseJson);
 
-  const imageUrls = responseJson.Items
-    .map(({ Id }) => `${STATIC_HOST_URL}/image-${Id}`);
+  // for dynamo images, this needs to get adjusted to support uploads later
+  // if that ends up being the case
+  // const imageUrls = responseJson.Items
+    // .map(({ Id }) => `${STATIC_HOST_URL}/image-${Id}`);
+
+  const imageUrls = responseJson
+    .filter(fileName =>
+      !fileName.includes('html')
+      && !fileName.includes('image-f69f7490-ed40-4a01-879b-19f3f39bb9ab')
+      && !fileName.includes('image-9448f0d1-4474-4ed5-856a-c204c9bb8044')
+      && !fileName.includes('image-cb1871f8-b333-41d6-93c8-bc18094c3318')
+      && !fileName.includes('image-447366d4-e2b8-4f47-a032-d2f1f3d80baf')
+      && !fileName.includes('image-f5020b83-c3a8-450e-b8c6-3f240156de3b')
+    )
+    .map(fileName => `${STATIC_HOST_URL}/${fileName}`);
 
   const gallery = document.getElementById('gallery-div');
 
