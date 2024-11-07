@@ -27,6 +27,10 @@ const loadImageIds = async () => {
       && !fileName.includes('image-cb1871f8-b333-41d6-93c8-bc18094c3318')
       && !fileName.includes('image-447366d4-e2b8-4f47-a032-d2f1f3d80baf')
       && !fileName.includes('image-f5020b83-c3a8-450e-b8c6-3f240156de3b')
+      && !fileName.includes('image-eed7ed44-1cc4-4b43-ac5b-4bd70db6d526')
+      && !fileName.includes('image-278ee1a9-12a9-4982-a574-d4d28cd8e028')
+      && !fileName.includes('image-89f61e1f-494c-435b-bf80-0999dd200607')
+      && !fileName.includes('image-d1a1b6db-c549-44a8-a430-81f94386f792')
     )
     .map(fileName => `${STATIC_HOST_URL}/${fileName}`);
 

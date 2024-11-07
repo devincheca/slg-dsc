@@ -164,6 +164,10 @@ body {
   background-color: var(--highlight);
 }
 
+#gallery-div:last-child {
+  margin-bottom: 50vh;
+}
+
 #gallery-div > img {
   background-color: var(--highlight);
   display: block;
