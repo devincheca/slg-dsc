@@ -11,9 +11,7 @@ const TableName = 'slg-dsc-wed-images';
 
 const loadImageIds = async () => {
   const response = await fetch(`${STATIC_HOST_URL}/manifest.json`);
-  console.log('res : ', response);
   const responseJson = await response.json();
-  console.log('res json: ', responseJson);
 
   // for dynamo images, this needs to get adjusted to support uploads later
   // if that ends up being the case
