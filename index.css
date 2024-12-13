@@ -166,13 +166,13 @@ body {
 @media screen and (min-width: 580px) {
   #gallery-div {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 @media screen and (min-width: 750px) {
   #gallery-div {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
@@ -185,7 +185,6 @@ body {
   display: block;
   height: 60vh;
   margin: auto;
-  margin-bottom: 1em;
   object-fit: cover;
 }
 
