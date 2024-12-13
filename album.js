@@ -50,7 +50,9 @@ const loadImageIds = async () => {
       const observer = new IntersectionObserver((entries, observer) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            document.getElementById(src).src = src;
+            const img = document.getElementById(src);
+            img.src = src;
+
             observer.disconnect();
           }
         }
@@ -58,6 +60,7 @@ const loadImageIds = async () => {
 
       observer.observe(img);
     });
+
 };
 
 (() => loadImageIds())();
