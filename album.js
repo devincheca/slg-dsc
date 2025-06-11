@@ -65,7 +65,11 @@ const loadImageIds = async () => {
             observer.disconnect();
           }
         }
-      }, {});
+      }, {
+        root: gallery,
+        rootMargin: '30px',
+        threshold: .01
+      });
 
       observer.observe(img);
     });
