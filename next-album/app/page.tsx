@@ -56,6 +56,8 @@ export default function Home() {
             alt={`Gallery Image ${index + 1}`}
             width={300}
             height={200}
+            placeholder="blur"
+            blurDataURL="../public/flowerPng.png"
           />
         ))}
       </div>
