@@ -1,73 +1,63 @@
-// import Image from "next/image";
+"use client";
 
-/*()
-<html>
+// Next
+import Image from "next/image";
 
-  <head>
-    <title>Sarah & Devin</title>
-    <meta charset="utf-8"></meta>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-    <link href="bulma.css" rel="stylesheet">
-    <link href="index.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="./images/flowerPng.png">
-    <script src="index.js" defer></script>
-    <!--
-      https://nv2vz41k98.execute-api.us-east-1.amazonaws.com/default/slg-dsc-wed
-    <script src="imageGallery.js" defer></script>
-    -->
-    <script src="nav.js" defer></script>
-    <script src="album.js" defer></script>
-  </head>
+// React
+import { useEffect, useState } from "react";
 
-  <body>
-    <div id="nav" style="display: none;">
-      <div onclick="toggleNav()">X</div>
-      <ul>
-        <li>
-          <a href="https://sarahguillen.devincheca.com">
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="registry.html">
-            Registry
-          </a>
-        </li>
-        <li>
-          <a href="details.html">
-            Additional Details
-          </a>
-        </li>
-        <li>
-          <a href="album.html">
-            Album
-          </a>
-        </li>
-        <li id="notifyDetails"></li>
-      </ul>
-    </div>
-
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-      {/*<div className="nav-bar-div" onClick={toggleNav()}>☰</div>
-  */
+// Constants
+const STATIC_HOST_URL = 'https://d2wam6qj2bskgp.cloudfront.net';
+const excludedPhotoIds: { [key: string]: boolean } = {
+  "D&S-46": true,
+  "D&S-47": true,
+  "D&S-48": true,
+  "D&S-49": true,
+  "D&S-51": true,
+  "D&S-86": true,
+  "image-f69f7490-ed40-4a01-879b-19f3f39bb9ab": true,
+  "image-9448f0d1-4474-4ed5-856a-c204c9bb8044": true,
+  "image-cb1871f8-b333-41d6-93c8-bc18094c3318": true,
+  "image-447366d4-e2b8-4f47-a032-d2f1f3d80baf": true,
+  "image-f5020b83-c3a8-450e-b8c6-3f240156de3b": true,
+  "image-eed7ed44-1cc4-4b43-ac5b-4bd70db6d526": true,
+  "image-278ee1a9-12a9-4982-a574-d4d28cd8e028": true,
+  "image-89f61e1f-494c-435b-bf80-0999dd200607": true,
+  "image-d1a1b6db-c549-44a8-a430-81f94386f792": true,
+};
 
 export default function Home() {
+  const [galleryImages, setGalleryImages] = useState<string[]>([]);
+
+  const fetchGalleryImages = async () => {
+    const response = await fetch(`${STATIC_HOST_URL}/manifest.json`);
+    const responseJson: string[] = await response.json();
+
+    const imageUrls = responseJson
+      .filter(fileName => !fileName.includes('html'))
+      .filter(fileName => !excludedPhotoIds[fileName.split('.')[0]])
+      .map(fileName => `${STATIC_HOST_URL}/${fileName}`);
+
+    setGalleryImages(imageUrls);
+  };
+
+  useEffect(() => { fetchGalleryImages() }, []);
+
   return (
     <main className="container">
       <section className="hero is-info">
         <div className="hero-body" style={{ textAlign: 'center' }}>Wedding Album</div>
       </section>
       <div id="gallery-div">
-        {/* insert images here by calling and modifying the javascript in gallery.js
-          renderImages()
-        */}
+        {galleryImages.map((imageUrl: string, index: number) => (
+          <Image
+            key={index}
+            src={imageUrl}
+            alt={`Gallery Image ${index + 1}`}
+            width={300}
+            height={200}
+          />
+        ))}
       </div>
     </main>
   );

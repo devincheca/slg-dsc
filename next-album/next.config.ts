@@ -5,14 +5,14 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 's3.amazonaws.com',
+        hostname: 'd2wam6qj2bskgp.cloudfront.net',
         port: '',
-        pathname: '/my-bucket/**',
-        // need public URL for S3 bucket not the Cloudfront one
+        pathname: '/**',
         search: '',
       },
     ],
   },
+  output: 'export',
 };
 
 export default nextConfig;
